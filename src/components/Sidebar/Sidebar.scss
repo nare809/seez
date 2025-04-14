@@ -1,0 +1,300 @@
+@import "../../global";
+#sidebar {
+  padding: env(safe-area-inset-top) 0 0 env(safe-area-inset-left); // ios fixed notches.
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $sidebar-z; // sidebar is always show on top
+  transition-duration: 0.2s;
+  overflow-y: auto;
+  align-items: center;
+  overflow-x: hidden;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: #18212D; // Darker sidebar color from image
+  
+  /* Light mode sidebar */
+  body:not(.dark-mode) & {
+    background-color: #f2f2f2;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .notif {
+    font-size: 10px;
+    font-weight: 100;
+  }
+  
+  .sidebar {
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    transition-duration: 0.2s;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .sidebar-content {
+    width: 230px;
+    transition-duration: 0.2s;
+
+    &.is-active{
+      width: 85px;
+
+      .notif {
+        display: none;
+      }
+
+      .side-text {
+        display: none;
+      }
+
+      .logo-expand,
+      .side-title {
+        display: none;
+      }
+      .logo {
+        display: flex;
+      }
+      .side-wrapper {
+        width: 30px;
+      }
+      .side-menu svg {
+        margin-right: 30px;
+      }
+    }
+  }
+  
+  .sidebar .logo {
+    display: none;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sidebar .logo-expand {
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 34px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    color: #ffffff; // White text for logo
+    
+    /* Light mode logo text */
+    body:not(.dark-mode) & {
+      color: #1E2939;
+    }
+  }
+
+  .logo-expand svg {
+    position: absolute;
+    width: 15px;
+    color: #ffffff; // White icon color
+    right: -5px;
+    top: -15px;
+    
+    /* Light mode logo icon */
+    body:not(.dark-mode) & {
+      color: #1E2939;
+    }
+  }
+  
+  .sidebar .logo-expand:before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 200px;
+    height: 70px;
+    z-index: -1;
+  }
+  
+  @-webkit-keyframes bottom {
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  
+  @keyframes bottom {
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  
+  .side-menu {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .side-menu a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #c4c4c4; // Light gray text color for menu items
+    
+    /* Light mode menu items */
+    body:not(.dark-mode) & {
+      color: #555;
+    }
+  }
+  
+  .side-menu a+a {
+    margin-top: 26px;
+  }
+  
+  .side-menu svg {
+    width: 30px;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.05); // Semi-transparent white for icon backgrounds
+    transition: box-shadow 0.15s ease;
+    flex-shrink: 0;
+    margin-right: 16px;
+    color: #ffffff; // White icon color
+    box-shadow: none; // Remove shadow for cleaner look
+    
+    /* Light mode icons */
+    body:not(.dark-mode) & {
+      background-color: rgba(30, 41, 57, 0.05);
+      color: #1E2939;
+    }
+  }
+
+  .side-menu title {
+    &:hover {
+      font-weight: 600;
+      color: #ffffff; // White text on hover
+      
+      /* Light mode hover text */
+      body:not(.dark-mode) & {
+        color: #1E2939;
+      }
+    }
+  }
+
+  .side-menu a:hover {
+    color: #4d7dff; // Blue accent color on hover
+  }
+  
+  .side-title {
+    font-size: 12px;
+    letter-spacing: 0.07em;
+    margin-bottom: 24px;
+    color: #888888; // Gray color for section titles
+    text-transform: uppercase; // Match the uppercase in the image
+    
+    /* Light mode section titles */
+    body:not(.dark-mode) & {
+      color: #555;
+    }
+  }
+  
+  .side-wrapper {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); // Semi-transparent border
+    padding: 36px 0;
+    width: 145px;
+    
+    /* Light mode borders */
+    body:not(.dark-mode) & {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+  }
+  
+  .side-wrapper + .side-wrapper + .side-wrapper {
+    border-bottom: none;
+  }
+}
+
+.language-menu {
+  background-color: #18212D; // Match sidebar background
+  border-radius: 8px; // Rounded corners
+  margin-left: 35px;
+  margin-top: 5px;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  
+  /* Light mode language menu */
+  body:not(.dark-mode) & {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  &-item {
+    padding: 10px 15px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 14px;
+    
+    /* Light mode language items */
+    body:not(.dark-mode) & {
+      color: #333;
+    }
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: #4d7dff; // Blue accent color on hover
+      
+      /* Light mode hover */
+      body:not(.dark-mode) & {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+    }
+    
+    &.active {
+      background-color: rgba(77, 125, 255, 0.2); // Semi-transparent blue
+      color: #4d7dff; // Blue accent color
+    }
+  }
+  
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    
+    /* Light mode scrollbar track */
+    body:not(.dark-mode) & {
+      background: rgba(0, 0, 0, 0.05);
+    }
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    
+    /* Light mode scrollbar thumb */
+    body:not(.dark-mode) & {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.language-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
+  .current-language {
+    font-size: 0.8rem;
+    color: var(--primary-color, #e53935);
+    margin-top: 2px;
+  }
+}

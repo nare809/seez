@@ -1,0 +1,32 @@
+@import "../../global";
+
+.network-section {
+  margin-bottom: 40px;
+
+  .section-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--font-color);
+  }
+}
+
+// Adjust poster card size for networks
+.network-section .poster-card {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--box-item-color);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+  }
+} 

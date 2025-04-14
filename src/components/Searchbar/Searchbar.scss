@@ -1,0 +1,109 @@
+@import "../../global";
+
+::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  
+  body:not(.dark-mode) & {
+    color: rgba(30, 41, 57, 0.6);
+  }
+}
+
+::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  
+  body:not(.dark-mode) & {
+    color: rgba(30, 41, 57, 0.6);
+  }
+}
+
+.search-menu {
+  white-space: nowrap;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.search-bar {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(25, 29, 37, 0.9);
+  border-radius: 50px;
+  padding: 0 12px;
+  transition: all 0.2s ease;
+  
+  body:not(.dark-mode) & {
+    background-color: rgba(240, 240, 240, 0.8);
+  }
+  
+  input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0 12px 0 32px;
+    color: #ffffff;
+    font-size: 14px;
+    
+    body:not(.dark-mode) & {
+      color: #1E2939;
+    }
+    
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+      
+      body:not(.dark-mode) & {
+        color: rgba(30, 41, 57, 0.6);
+      }
+    }
+  }
+  
+  &:focus-within {
+    background-color: rgba(28, 32, 40, 0.95);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+    
+    body:not(.dark-mode) & {
+      background-color: rgba(240, 240, 240, 0.95);
+      box-shadow: 0 0 0 1px rgba(30, 41, 57, 0.1);
+    }
+  }
+  
+  &::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-image: url("../../assets/search.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.8;
+    
+    body:not(.dark-mode) & {
+      background-image: url("../../assets/search-dark.svg");
+    }
+  }
+}
+
+.searchbar {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+}

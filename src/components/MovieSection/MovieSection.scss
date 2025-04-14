@@ -1,0 +1,66 @@
+@import "../../global";
+
+.movie-section {
+  margin-bottom: 30px;
+  position: relative;
+  padding: 0 15px;
+  background-color: #0C111B; /* Dark background */
+  
+  /* Light mode specific background */
+  body:not(.dark-mode) & {
+    background-color: #f8f8f8; /* Light gray background for light mode */
+  }
+
+  .section-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #ffffff;
+    padding: 12px 0 12px 5px;
+    background-color: #0C111B;
+    
+    /* Light mode specific styling */
+    body:not(.dark-mode) & {
+      color: #1E2939; /* Dark text for light mode */
+      background-color: #f8f8f8; /* Match light mode background */
+    }
+  }
+  
+  .scroll-container {
+    padding-bottom: 5px;
+    position: relative;
+    min-height: 320px; /* Increased to accommodate full poster card height */
+  }
+}
+
+// We don't need these styles anymore since we've defined them in PosterCard.scss
+// and they would override our new styles with conflicting definitions
+.movie-section .poster-card {
+  // We'll now rely on the styling in PosterCard.scss
+  // This removes conflicting styles
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .movie-section {
+    padding: 0 10px;
+    
+    .section-title {
+      font-size: 18px;
+      margin-bottom: 10px;
+      padding: 8px 0 8px 5px;
+    }
+    
+    .scroll-container {
+      min-height: 250px; /* Adjusted for mobile */
+    }
+  }
+  
+  .movie-section .poster-card {
+    width: 130px;
+    
+    .poster-image {
+      height: 195px;
+    }
+  }
+} 

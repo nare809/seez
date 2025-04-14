@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<urlset xmlns="http://www.google.com/schemas/sitemap/0.84" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+		<url>
+			<loc>https://www.vidplay.watch/</loc>
+		</url>
+		<url>
+			<loc>https://www.vidplay.watch</loc>
+		</url>
+		<url>
+			<loc>https://www.vidplay.watch/movies/popular</loc>
+		</url>
+		<url>
+			<loc>https://www.vidplay.watch/movies/top_rated</loc>
+		</url>
+		<url>
+			<loc>https://www.vidplay.watch/movies/upcoming</loc>
+		</url>
+		<url>
+			<loc>https://www.vidplay.watch/movies/genre</loc>
+		</url>
+		<url>
+			<loc>https://www.vidplay.watch/movies/year/2020</loc>
+		</url>
+		<url>
+			<loc>https://www.vidplay.watch/shows/popular</loc>
+		</url>
+		<url>
+			<loc>https://www.vidplay.watch/shows/top_rated</loc>
+		</url>
+		<url>
+			<loc>https://www.vidplay.watch/shows/airing_today</loc>
+		</url>
+		<url>
+			<loc>https://www.vidplay.watch/shows/genre</loc>
+		</url>
+		<url>
+			<loc>https://www.vidplay.watch/shows/year/2021</loc>
+		</url>
+		<url>
+			<loc>https://www.vidplay.watch/questions</loc>
+		</url>
+	</urlset>
+
+

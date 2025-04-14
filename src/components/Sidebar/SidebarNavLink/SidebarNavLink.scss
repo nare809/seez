@@ -1,0 +1,41 @@
+@import "../../../global";
+#sidebar {
+
+.sidebar-link {
+    svg {
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    &:hover svg {
+      background: var(--tab-bg);
+      color: var(--tab-color);
+      box-shadow: $default-boxshadow;
+    }
+
+    &.is-active svg {
+      background: var(--tab-bg);
+      color: var(--tab-color);
+      box-shadow: $default-boxshadow;
+    }
+
+    &:hover, &.is-active {
+      font-weight: 600;
+      color: var(--font-color);
+    }
+    
+    /* Light mode specific enhancements */
+    body:not(.dark-mode) & {
+      color: #333; /* Darker text color for better visibility in light mode */
+      
+      svg {
+        color: #424242; /* Darker icon color */
+      }
+      
+      &:hover, &.is-active {
+        color: #1E2939; /* Even darker when hovered/active */
+        font-weight: 700;
+      }
+    }
+  }
+}

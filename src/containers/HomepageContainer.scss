@@ -1,0 +1,20 @@
+@import "../global";
+
+.homepage-container {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  .section-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--font-color);
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage-container {
+    padding: 10px;
+  }
+} 
