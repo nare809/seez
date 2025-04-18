@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import LoadingGrid from "../Loading/LoadingGrid";
 import PosterGrid from "../PosterGrid/PosterGrid";
-
+import HomepageHeader from "./HomepageHeader";
 import { SignedIn, SignedOut } from "../UserState/UserState";
 import Seo from "../Seo";
 import "./Homepage.scss";
@@ -35,7 +35,7 @@ function Homepage({
     />
     <div id="homepage" className="container">
     <Announcement />
-      <div className="home">Home</div>
+      <HomepageHeader title="Discover Movies & TV Shows" />
       <section>
         <div className="main-blogs">
           <SignedIn>
