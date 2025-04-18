@@ -1,4 +1,4 @@
-# HdScreen
+# Seez
 
 A streaming platform for movies and TV shows.
 
@@ -10,33 +10,26 @@ This project uses React, Webpack, and Firebase. Due to PowerShell execution poli
 
 ```
 # Clone the repository
-git clone https://github.com/yourusername/hdscreen.git
-cd hdscreen
+git clone https://github.com/nare809/seez.git
+cd seez
 
 # Install dependencies (if you face PowerShell restrictions)
 # Run these command files:
-.\install-plugins.cmd
-.\install-babel-plugin.cmd
+npm install
 ```
 
 ### Development
 
 ```
 # Start the development server on port 9001
-.\dev.cmd
+npm run dev
 ```
 
 ### Production Build
 
 ```
 # Build for production
-.\build.cmd
-
-# Analyze bundle size
-.\analyze-bundle.cmd
-
-# Serve production build
-.\serve-prod.cmd
+npm run build
 ```
 
 ## Recent Optimizations
